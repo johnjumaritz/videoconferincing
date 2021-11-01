@@ -1,0 +1,32 @@
+{
+  "name": "videoconferincing",
+  "version": "1.0.0",
+  "description": "peer to peer video, one to many client connection or one to one connection using nodejs",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "build": "",
+    "devcss": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bonsai-321/videoconferincing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bonsai-321/videoconferincing/issues"
+  },
+  "homepage": "https://github.com/bonsai-321/videoconferincing#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "expres": "^0.0.5",
+    "socket.io": "^4.3.1"
+  },
+  "devDependencies": {
+    "dotenv": "^10.0.0",
+    "nodemon": "^2.0.14"
+  }
+}
