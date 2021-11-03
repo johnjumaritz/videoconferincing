@@ -6,7 +6,7 @@ const myVid = document.createElement('video') // create video element
 myVid.muted = true // mute my video element
 const myPeer = new Peer(undefined, {
 	host: location.hostname,
-	port: 433,
+	port: location.port || (location.protocol === 'https:' ? 443 : 80) || 3000,
 	path: '/peer'
 })
 
