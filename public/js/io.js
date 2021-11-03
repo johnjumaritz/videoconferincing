@@ -58,12 +58,7 @@ const handler = {
 		const call = myPeer.call(userid, stream) 
 		const vid = document.createElement('video')
 		call.on('stream', (userVidStream) => {
-			//handler.addvidSteam(video, userVidStream) 
-			vid.srcObject = stream 
-		vid.addEventListener('loadedmetadata', () => {
-			vid.play()
-		}) 
-		vidgrid.append(vid)
+			handler.addvidSteam(video, userVidStream) 
 		})
 
 		call.on('close', () => {
