@@ -56,9 +56,14 @@ const handler = {
 	}, 
 	connect2NewUser: (userid, stream) => {
 		const call = myPeer.call(userid, stream) 
-		const video = document.createElement('video')
+		const vid = document.createElement('video')
 		call.on('stream', (userVidStream) => {
-			handler.addvidSteam(video, userVidStream)
+			//handler.addvidSteam(video, userVidStream) 
+			vid.srcObject = stream 
+		vid.addEventListener('loadedmetadata', () => {
+			vid.play()
+		}) 
+		vidgrid.append(vid)
 		})
 
 		call.on('close', () => {
