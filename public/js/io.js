@@ -11,7 +11,7 @@ const myPeer = new Peer(undefined, {
 })
 
 //get camera  and audio permision
-let UserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia //get user media
+//let UserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia //get user media
 navigator.mediaDevices.getUserMedia({
 	video: true,
 	audio: true,
