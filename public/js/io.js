@@ -56,7 +56,7 @@ const handler = {
 	}, 
 	connect2NewUser: (userid, stream) => {
 		const call = myPeer.call(userid, stream) 
-		const vid = document.createElement('video')
+		const video = document.createElement('video')
 		call.on('stream', (userVidStream) => {
 			handler.addvidSteam(video, userVidStream) 
 		})
