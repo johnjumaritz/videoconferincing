@@ -32,7 +32,9 @@
     "helmet": "^4.6.0",
     "morgan": "^1.10.0",
     "multer": "^1.4.3",
+    "peer": "^0.6.1",
     "socket.io": "^4.3.1",
+    "uuid": "^8.3.2",
     "xss": "^1.0.10"
   },
   "devDependencies": {

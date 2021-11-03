@@ -20,7 +20,12 @@ const helmet = require('helmet') // server extra security
 const cors = require('cors') // see cors in google :D 
 const xs = require('xss') // excape html elements 
 const csrf = require('csurf') // csrf token for submitting forms 
-const path = require('path')
+const path = require('path') 
+const { ExpressPeerServer } = require('peer') 
+const { v4: uuidV4 } = require('uuid')
+const peerServer = ExpressPeerServer(http, {
+  debug: true
+})
 const route = require('./routes/route')
 //server settings 
 app.use(
@@ -39,6 +44,7 @@ if(app.get('env') === 'production'){
 } 
 app.use(cookieParser())
 app.use(csrf({cookie: true}))
+app.use('/peer', peerServer)
 app.use(route)
 
 //http 404 request
@@ -54,7 +60,11 @@ admin.on('connection', async (io) => {
     console.log(`Admin Connected ${io.id}`)
 })
 user.on('connection', async (io) => {
-    console.log(`New User Connected ${io.id}`)
+    //console.log(`New User Connected ${io.id}`) 
+    io.on('join', async (roomid, userid) => {
+        io.join(roomid) 
+        io.to(roomid).emit('new-user-connected', userid)
+    })
 })
 //listen to port
 http.listen(port, () => {

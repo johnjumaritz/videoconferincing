@@ -2,16 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="roomId" content="<%= roomid %>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
+    <title>Video Conferincing</title>
     <link rel="stylesheet" href="/css/tailwindcss/style.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body class="bg-gray-900">
-    <div class="h-screen w-screen flex justify-center items-center p-2">
-        <div class="py-3 px-5 rounded-md shadow-md bg-gray-700 text-gray-300 text-center">See message on console</div>
+    <div class="px-3 py-2 flex flex-col justify-center items-center">
+        <span class="text-gray-300 text-2xl font-medium">Video Conferincing</span>
     </div>
-    <script src="/socket.io/socket.io.js"></script>
+    <div id="participants" class="grid grid-cols-4 lg:grid-cols-3 md:grid-cols-2  gap-3 p-2">
+        
+    </div>
+    <div class="fixed bottom-0 w-full flex justify-end p-1">
+        <div id="myvideo"></div>
+    </div>
     <script src="/js/index.js"></script>
+    <script src="/js/io.js"></script>
 </body>
 </html>
