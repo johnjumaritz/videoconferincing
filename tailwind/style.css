@@ -9,5 +9,5 @@
     @apply w-full h-full object-cover rounded-lg;
 }
 #participants video {
-    @apply w-full h-full object-cover rounded-lg;
+    @apply w-full h-full object-cover rounded-lg border border-purple-600;
 }
