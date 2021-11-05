@@ -24,7 +24,8 @@ const path = require('path')
 const { ExpressPeerServer } = require('peer') 
 const { v4: uuidV4 } = require('uuid')
 const peerServer = ExpressPeerServer(http, {
-  debug: true
+  debug: true, 
+  allow_discovery: true
 })
 const route = require('./routes/route')
 //server settings 
